@@ -1,4 +1,4 @@
-from src.tuples import point, vector
+from src.tuples import Vector, Point
 
 def is_point(a: tuple) -> bool:
     """This function verify if givn tuple is a point based on the
@@ -30,7 +30,7 @@ def is_vector(a: tuple) -> bool:
  
 def test_point():
     """Test for the tuple representation of a point"""
-    a = (4.3, -4.2, 3.1, 1)
+    a : tuple = (4.3, -4.2, 3.1, 1)
     assert a[0] == 4.3
     assert a[1] == -4.2
     assert a[2] == 3.1
@@ -39,7 +39,7 @@ def test_point():
     
 def test_vector():
     """Test for the tuple representaton of a point"""
-    a = (4.3, -4.2, 3.1, 0)
+    a : tuple = (4.3, -4.2, 3.1, 0)
     assert a[0] == 4.3
     assert a[1] == -4.2
     assert a[2] == 3.1
@@ -47,9 +47,18 @@ def test_vector():
     assert is_vector(a) is True
     
 def test_point_fun():
-    p = point(4, -4, 3)
-    assert p == (4, -4, 3, 1)
+    """Testing the point function
+    """
+    p : Point = Point(4, -4, 3)
+    assert p.to_tuple() == (4, -4, 3, 1)
 
 def test_vector_fun():
-    v = vector(4, -4, 3)
-    assert v == (4, -4, 3, 0)
+    """Testing the vector function
+    """
+    v : Vector = Vector(4, -4, 3)
+    assert v.to_tuple() == (4, -4, 3, 0)
+
+def test_addiction():
+    a1 : Point = Point(3, -2, 5)
+    a2 : Vector = Vector(-2, 3, 1)
+    assert (a1 + a2).to_tuple() == (1, 1, 6, 1)
