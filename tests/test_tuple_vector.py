@@ -1,3 +1,5 @@
+from src.tuples import point, vector
+
 def is_point(a: tuple) -> bool:
     """This function verify if givn tuple is a point based on the
         assumption that if the last element of the tuple is a q than
@@ -43,3 +45,11 @@ def test_vector():
     assert a[2] == 3.1
     assert is_point(a) is False
     assert is_vector(a) is True
+    
+def test_point_fun():
+    p = point(4, -4, 3)
+    assert p == (4, -4, 3, 1)
+
+def test_vector_fun():
+    v = vector(4, -4, 3)
+    assert v == (4, -4, 3, 0)
