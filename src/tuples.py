@@ -59,6 +59,14 @@ class Tuple:
             self.z + other.z,
             self.w + other.w
         )
+    
+    def __sub__(self, other):
+        return Tuple(
+                    self.x - other.x,
+                    self.y - other.y,
+                    self.z - other.z,
+                    self.w - other.w
+                )
         
 
 class Point(Tuple):
@@ -92,6 +100,17 @@ class Point(Tuple):
             _type_: _description_
         """
         return self.t.__add__(other.t)
+
+    def __sub__(self, other):
+        """Operator overload for the subtraction
+
+        Args:
+            other (_type_): object that has a tuple 
+
+        Returns:
+            _type_: _description_
+        """
+        return self.t.__sub__(other.t)
     
 class Vector(Tuple):
     """Class representation of the Vector
@@ -115,4 +134,23 @@ class Vector(Tuple):
         return self.t.to_tuple()
     
     def __add__(self, other):
-            return self.t.__add__(other.t)
+        """Operator overload for the addition
+
+        Args:
+            other (_type_): object that has a tuple 
+
+        Returns:
+            _type_: _description_
+        """
+        return self.t.__add__(other.t)
+
+    def __sub__(self, other):
+        """Operator overload for the subtraction
+
+        Args:
+            other (_type_): object that has a tuple 
+
+        Returns:
+            _type_: _description_
+        """
+        return self.t.__sub__(other.t)

@@ -59,6 +59,15 @@ def test_vector_fun():
     assert v.to_tuple() == (4, -4, 3, 0)
 
 def test_addiction():
+    """Test for the addition operations
+    """
     a1 : Point = Point(3, -2, 5)
     a2 : Vector = Vector(-2, 3, 1)
     assert (a1 + a2).to_tuple() == (1, 1, 6, 1)
+    
+def test_subtraction():
+    """Test for the subtraction operation
+    """
+    p1 = Point(3, 2, 1)
+    p2 = Point(5, 6, 7)
+    assert (p1 - p2).to_tuple() == Vector(-2 , -4, -6).to_tuple()
