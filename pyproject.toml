@@ -1,0 +1,16 @@
+[project]
+name = "ray-tracing"
+version = "0.1.0"
+description = "A Ray-Tracer implemented in Python"
+authors = [
+    {name = "lfresco@deloitte.it"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pytest (>=9.2.0,<10.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
