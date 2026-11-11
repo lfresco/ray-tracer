@@ -71,3 +71,10 @@ def test_subtraction():
     p1 = Point(3, 2, 1)
     p2 = Point(5, 6, 7)
     assert (p1 - p2).to_tuple() == Vector(-2 , -4, -6).to_tuple()
+
+def test_subtracting_vec_from_point():
+    """Subtracting a vector from a point
+    """
+    p = Point(3, 2, 1)
+    v = Vector(5, 6, 7)
+    assert (p - v).to_tuple() == Point(-2, -4, -6).to_tuple()
