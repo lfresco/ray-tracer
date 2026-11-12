@@ -29,6 +29,8 @@ def vector(x: float, y: float, z: float) -> tuple:
         """
     return(x, y, z, 0)
 
+    
+
 class Tuple:
     """Tuple base element
     """
@@ -83,7 +85,7 @@ class Tuple:
             -self.w
         )
     
-    def __mul__(self, other):
+    def __mul__(self, other: Tuple) -> Tuple:
         return Tuple(
             self.x * other,
             self.y * other,
@@ -91,13 +93,16 @@ class Tuple:
             self.w * other
         )
     
-    def __truediv__(self, other):
+    def __truediv__(self, other: Tuple) -> Tuple:
         return Tuple(
             self.x / other,
             self.y / other,
             self.z / other,
             self.w / other
         )
+    
+    def __eq__(self, other: Tuple) -> bool:
+        return self.to_tuple() == other.to_tuple()
 
 class Point(Tuple):
     """Class representinf the point tuple

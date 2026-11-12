@@ -71,45 +71,45 @@ def test_subtraction():
     """
     p1 = Point(3, 2, 1)
     p2 = Point(5, 6, 7)
-    assert (p1 - p2).to_tuple() == Vector(-2 , -4, -6).to_tuple()
+    assert (p1 - p2) == Vector(-2 , -4, -6)
 
 def test_subtracting_vec_from_point():
     """Subtracting a vector from a point
     """
     p = Point(3, 2, 1)
     v = Vector(5, 6, 7)
-    assert (p - v).to_tuple() == Point(-2, -4, -6).to_tuple()
+    assert (p - v) == Point(-2, -4, -6)
 
 def test_subtracting_two_vectors():
     """The subtraction of two vectors gives us a Vector
     """
     v1: Vector =  Vector(3, 2, 1)
     v2: Vector = Vector(5, 6, 7)
-    assert (v1 - v2).to_tuple() == Vector(-2, -4, -6).to_tuple()
+    assert (v1 - v2) == Vector(-2, -4, -6)
     
 def test_negation():
     """Negating a tuple
     """
     a: Tuple = Tuple(1, -2, -3, 4)
-    assert (-a).to_tuple() == Tuple(-1, 2, 3, -4).to_tuple()
+    assert (-a) == Tuple(-1, 2, 3, -4)
     
 def test_multiplying_scalar():
     """Multiplying a tuple for a scalar
     """
     a : Tuple = Tuple(1, -2, 3, -4)
-    assert (a * 3.5).to_tuple() == Tuple(3.5, -7, 10.5, -14).to_tuple()
+    assert (a * 3.5) == Tuple(3.5, -7, 10.5, -14)
 
 def test_multiplying_by_fraction():
     """Multiplying fractions
     """
     a : Tuple = Tuple(1, -2, 3, -4)
-    assert (a * 0.5).to_tuple() == Tuple(0.5, -1, 1.5, -2).to_tuple()
+    assert (a * 0.5) == Tuple(0.5, -1, 1.5, -2)
 
 def test_dividing():
     """Dividing by a scalar
     """
     a : Tuple = Tuple(1, -2, 3, -4)
-    assert (a / 2).to_tuple() == Tuple(0.5, -1, 1.5, -2).to_tuple()
+    assert (a / 2) == Tuple(0.5, -1, 1.5, -2)
 
 def test_magnitude():
     """Scenario: Computing the magnitude of vector(1, 0, 0)
@@ -143,3 +143,10 @@ def test_magnitude5():
     """
     v : Vector = Vector(-1, -2, -3)
     assert v.magnitude() == sqrt(14.0)
+
+def test_normalize1():
+    """Scenario: Normalizing vector(4, 0, 0) gives (1, 0, 0)
+    """
+
+    v : Vector = Vector(4, 0, 0)
+    assert v.normalize() == Vector(1, 0, 0)
