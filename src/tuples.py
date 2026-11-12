@@ -67,6 +67,19 @@ class Tuple:
                     self.z - other.z,
                     self.w - other.w
                 )
+    
+    def __neg__(self):
+        """Negation of a Tuple
+
+        Returns:
+            Tuple: returns a Tuple with negated elements
+        """
+        return Tuple(
+            -self.x,
+            -self.y,
+            -self.z,
+            -self.w
+        )
         
 
 class Point(Tuple):
@@ -112,6 +125,9 @@ class Point(Tuple):
         """
         return self.t.__sub__(other.t)
     
+    def __neg__(self):
+        
+        return self.t.__neg__()
 class Vector(Tuple):
     """Class representation of the Vector
     """
@@ -154,3 +170,6 @@ class Vector(Tuple):
             _type_: _description_
         """
         return self.t.__sub__(other.t)
+    
+    def __neg__(self):
+            return self.t.__neg__()

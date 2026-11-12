@@ -1,4 +1,4 @@
-from src.tuples import Vector, Point
+from src.tuples import Vector, Point, Tuple
 
 def is_point(a: tuple) -> bool:
     """This function verify if givn tuple is a point based on the
@@ -85,3 +85,8 @@ def test_subtracting_two_vectors():
     v1: Vector =  Vector(3, 2, 1)
     v2: Vector = Vector(5, 6, 7)
     assert (v1 - v2).to_tuple() == Vector(-2, -4, -6).to_tuple()
+    
+def test_negation():
+    
+    a: Tuple = Tuple(1, -2, -3, 4)
+    assert (-a).to_tuple() == Tuple(-1, 2, 3, -4).to_tuple()
