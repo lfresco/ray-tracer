@@ -80,7 +80,14 @@ class Tuple:
             -self.z,
             -self.w
         )
-        
+    
+    def __mul__(self, other):
+        return Tuple(
+            self.x * other,
+            self.y * other,
+            self.z * other,
+            self.w * other
+        )
 
 class Point(Tuple):
     """Class representinf the point tuple
@@ -126,7 +133,11 @@ class Point(Tuple):
         return self.t.__sub__(other.t)
     
     def __neg__(self):
-        
+        """Return the negation of a Tuple
+
+        Returns:
+            Tuple: returns the negation of an element
+        """
         return self.t.__neg__()
 class Vector(Tuple):
     """Class representation of the Vector
@@ -172,4 +183,5 @@ class Vector(Tuple):
         return self.t.__sub__(other.t)
     
     def __neg__(self):
-            return self.t.__neg__()
+        
+        return self.t.__neg__()
