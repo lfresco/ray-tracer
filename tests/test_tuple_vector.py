@@ -1,4 +1,5 @@
 from src.tuples import Vector, Point, Tuple
+from math import sqrt
 
 def is_point(a: tuple) -> bool:
     """This function verify if givn tuple is a point based on the
@@ -116,3 +117,29 @@ def test_magnitude():
 
     v : Vector = Vector(1, 0, 0)
     assert v.magnitude() == 1.0
+
+def test_magnitude_2():
+    """Scenario: Computing the magnitude of vector(0, 1, 0)
+    """
+    
+    v : Vector = Vector(0, 1, 0)
+    assert v.magnitude() == 1
+
+def test_magnitude3():
+    """Scenario: Computing the magnitude of vector(0, 0, 1)
+    """
+    v : Vector = Vector(0, 0, 1)
+    assert v.magnitude() == 1
+
+def test_magnitude4():
+    """Scenario: Computing the magnitude of vector(1, 2, 3)
+    """
+    
+    v : Vector = Vector(1, 2, 3)
+    assert v.magnitude() == sqrt(14.0)
+
+def test_magnitude5():
+    """Scenario: Computing the magnitude of vector(-1, -2, -3)
+    """
+    v : Vector = Vector(-1, -2, -3)
+    assert v.magnitude() == sqrt(14.0)
