@@ -93,7 +93,7 @@ def test_negation():
     assert (-a).to_tuple() == Tuple(-1, 2, 3, -4).to_tuple()
     
 def test_multiplying_scalar():
-    """_summary_
+    """Multiplying a tuple for a scalar
     """
     a : Tuple = Tuple(1, -2, 3, -4)
     assert (a * 3.5).to_tuple() == Tuple(3.5, -7, 10.5, -14).to_tuple()

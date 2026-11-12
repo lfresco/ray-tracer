@@ -183,5 +183,9 @@ class Vector(Tuple):
         return self.t.__sub__(other.t)
     
     def __neg__(self):
-        
+        """Negate the elements
+
+        Returns:
+            Tuple: negates the values
+        """
         return self.t.__neg__()
