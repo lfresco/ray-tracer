@@ -169,3 +169,17 @@ class Vector(Tuple):
             self.w * other.w
         )
     
+    def cross(self, other: Vector) -> Vector:
+        """Cros product
+
+        Args:
+            other (Vector): another vector
+
+        Returns:
+            Vector: the resulting vector
+        """
+        return Vector(
+            x= self.y * other.z - self.z * other.y,
+            y = self.z * other.x - self.x * other.z,
+            z = self.x * other.y - self.y * other.x
+        )

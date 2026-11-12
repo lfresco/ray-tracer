@@ -158,3 +158,12 @@ def test_dot_product():
     a : Vector = Vector(1, 2, 3)
     b : Vector = Vector(2, 3, 4)
     assert a.dot(b) == 20
+
+def test_cross_product():
+    """The cross product of two vectors
+    """
+    a : Vector = Vector(1, 2, 3)
+    b : Vector = Vector(2, 3, 4)
+    
+    assert a.cross(b) == Vector(-1, 2, -1)
+    assert b.cross(a) == Vector(1, -2, 1)
