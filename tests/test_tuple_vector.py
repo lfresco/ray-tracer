@@ -97,3 +97,22 @@ def test_multiplying_scalar():
     """
     a : Tuple = Tuple(1, -2, 3, -4)
     assert (a * 3.5).to_tuple() == Tuple(3.5, -7, 10.5, -14).to_tuple()
+
+def test_multiplying_by_fraction():
+    """Multiplying fractions
+    """
+    a : Tuple = Tuple(1, -2, 3, -4)
+    assert (a * 0.5).to_tuple() == Tuple(0.5, -1, 1.5, -2).to_tuple()
+
+def test_dividing():
+    """Dividing by a scalar
+    """
+    a : Tuple = Tuple(1, -2, 3, -4)
+    assert (a / 2).to_tuple() == Tuple(0.5, -1, 1.5, -2).to_tuple()
+
+def test_magnitude():
+    """Scenario: Computing the magnitude of vector(1, 0, 0)
+    """
+
+    v : Vector = Vector(1, 0, 0)
+    assert v.magnitude() == 1.0

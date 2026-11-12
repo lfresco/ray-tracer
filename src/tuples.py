@@ -1,6 +1,8 @@
 """
 This module contains the tuple implementation of the point and the vector
 """
+from math import sqrt
+
 def point(x: float, y: float, z: float) -> tuple:
     """Returns a tuple representation of the point 
 
@@ -88,6 +90,14 @@ class Tuple:
             self.z * other,
             self.w * other
         )
+    
+    def __truediv__(self, other):
+        return Tuple(
+            self.x / other,
+            self.y / other,
+            self.z / other,
+            self.w / other
+        )
 
 class Point(Tuple):
     """Class representinf the point tuple
@@ -100,45 +110,7 @@ class Point(Tuple):
                 y (float): y coordinate
                 z (float): z coordinate
             """
-        self.t = Tuple(x, y, z, 1.0)
-    
-    def to_tuple(self) -> tuple:
-        """Returns tuple representation of the Point object
-
-        Returns:
-            tuple: tuple with coordinates
-        """
-        return self.t.to_tuple()
-
-    def __add__(self, other) -> Tuple:
-        """Operator overload for the addition
-
-        Args:
-            other (_type_): object that has a tuple 
-
-        Returns:
-            _type_: _description_
-        """
-        return self.t.__add__(other.t)
-
-    def __sub__(self, other):
-        """Operator overload for the subtraction
-
-        Args:
-            other (_type_): object that has a tuple 
-
-        Returns:
-            _type_: _description_
-        """
-        return self.t.__sub__(other.t)
-    
-    def __neg__(self):
-        """Return the negation of a Tuple
-
-        Returns:
-            Tuple: returns the negation of an element
-        """
-        return self.t.__neg__()
+        super().__init__(x=x, y=y, z=z, w=1.0)
 class Vector(Tuple):
     """Class representation of the Vector
     """
@@ -150,42 +122,12 @@ class Vector(Tuple):
             y (float): y coordinate
             z (float): z coordinate
         """
-        self.t = Tuple(x, y, z, 0.0)
+        super().__init__(x = x, y = y, z = z, w = 0.0)
     
-    def to_tuple(self) -> tuple:
-        """Returns tuple representation of the Point object
-        
-        Returns:
-            tuple: tuple with coordinates
-        """
-        return self.t.to_tuple()
-    
-    def __add__(self, other):
-        """Operator overload for the addition
-
-        Args:
-            other (_type_): object that has a tuple 
+    def magnitude(self) -> float:
+        """Computes magnitude of a vector
 
         Returns:
             _type_: _description_
         """
-        return self.t.__add__(other.t)
-
-    def __sub__(self, other):
-        """Operator overload for the subtraction
-
-        Args:
-            other (_type_): object that has a tuple 
-
-        Returns:
-            _type_: _description_
-        """
-        return self.t.__sub__(other.t)
-    
-    def __neg__(self):
-        """Negate the elements
-
-        Returns:
-            Tuple: negates the values
-        """
-        return self.t.__neg__()
+        return sqrt((self.x * self.x) + (self.y * self.y) + (self.z * self.z) + (self.w * self.w))
