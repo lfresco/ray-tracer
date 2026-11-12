@@ -149,3 +149,23 @@ class Vector(Tuple):
             x = self.x / magnitude,
             y = self.y / magnitude,
             z = self.z / magnitude)
+    
+    def dot(self, other: Vector):
+        """Compute the dot product of the vector
+        with another one
+
+        The smaller the product, the larger the angle
+        betweem the vectors
+        Args:
+            other (Vector): another vector
+
+        Returns:
+            _type_: _description_
+        """
+        return (
+            self.x * other.x +
+            self.y * other.y +
+            self.z * other.z +
+            self.w * other.w
+        )
+    

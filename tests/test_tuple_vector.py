@@ -150,3 +150,11 @@ def test_normalize1():
 
     v : Vector = Vector(4, 0, 0)
     assert v.normalize() == Vector(1, 0, 0)
+
+def test_dot_product():
+    """The dot product of two tuples
+    """
+    
+    a : Vector = Vector(1, 2, 3)
+    b : Vector = Vector(2, 3, 4)
+    assert a.dot(b) == 20
