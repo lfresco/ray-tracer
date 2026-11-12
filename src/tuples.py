@@ -136,3 +136,16 @@ class Vector(Tuple):
             _type_: _description_
         """
         return sqrt((self.x * self.x) + (self.y * self.y) + (self.z * self.z) + (self.w * self.w))
+    
+    def normalize(self) -> Vector:
+        """Transform the Vector into the unit vector
+
+        Returns:
+            Vector: unit vector
+        """
+        magnitude = self.magnitude()
+        
+        return Vector(
+            x = self.x / magnitude,
+            y = self.y / magnitude,
+            z = self.z / magnitude)
